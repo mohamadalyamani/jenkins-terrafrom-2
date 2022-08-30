@@ -28,10 +28,6 @@ resource "aws_security_group" "my_security_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  tags= {
-    Name = var.security_group
-  }
 }
 
 # Create AWS ec2 instance
@@ -42,18 +38,10 @@ resource "aws_instance" "myFirstInstance" {
   security_groups = var.security_group
   vpc_security_group_ids = var.vpc_cidr
   subnet_id = var.subnet1_cidr
-
-
-  tags= {
-    Name = var.tag_name
-  }
 }
 
 # Create Elastic IP address
 resource "aws_eip" "myFirstInstance" {
   vpc      = true
   instance = aws_instance.myFirstInstance.id
-tags= {
-    Name = "my_elastic_ip"
-  }
 }
