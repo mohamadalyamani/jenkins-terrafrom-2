@@ -15,7 +15,7 @@ variable "instance_type" {
 
 variable "security_group" {
   description = "Name of security group"
-  default     = "my-jenkins-security-group"
+  default     = ["my-jenkins-security-group"]
 }
 
 variable "tag_name" {
@@ -33,5 +33,5 @@ variable "vpc_cidr" {
 }
 
 variable "subnet1_cidr" {
-  default = ["172.16.0.0/24"]
+  default = "172.16.0.0/24"
 }
