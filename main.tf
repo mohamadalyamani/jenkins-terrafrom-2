@@ -40,8 +40,8 @@ resource "aws_instance" "myFirstInstance" {
   key_name = var.key_name
   instance_type = var.instance_type
   security_groups= var.security_group
-  vpc_id = var.vpc_cidr
-  subnet_id = var.subnet1_cidr
+  vpc_id = var.vpc_cidr
+  subnet_id = var.subnet1_cidr
 
 
   tags= {
