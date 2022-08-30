@@ -37,9 +37,19 @@ resource "aws_instance" "myFirstInstance" {
   instance_type = var.instance_type
   security_groups = [var.security_group]
 }
-
+#create vpc
+resource "aws_vpc" "myvpc" {
+  cidr_block = "10.0.0.0/16"
+}
+#create public subnet
+resource "aws_subnet" "public1" {
+  vpc_id = aws_vpc.myvpc.id
+  cidr_block = "10.0.1.0/24"
+}
 # Create Elastic IP address
 resource "aws_eip" "myFirstInstance" {
   vpc      = true
   instance = aws_instance.myFirstInstance.id
 }
+
+
