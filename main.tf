@@ -36,8 +36,6 @@ resource "aws_instance" "myFirstInstance" {
   key_name = var.key_name
   instance_type = var.instance_type
   security_groups = [var.security_group]
-  vpc_security_group_ids = var.vpc_cidr
-  subnet_id = var.subnet1_cidr
 }
 
 # Create Elastic IP address
