@@ -28,9 +28,10 @@ variable "ami_id" {
   description = "AMI for Ubuntu Ec2 instance"
   default     = "ami-052efd3df9dad4825"
 }
-variable "vpc_name" {
-  description = "my terraform vpc"
-}
-variable "pub_subnet" {
-  description = "public1"
-}
+#variable "vpc_name" {
+#  description = "my terraform vpc"
+#  default =
+#}
+#variable "pub_subnet" {
+#  description = "public1"
+#}
